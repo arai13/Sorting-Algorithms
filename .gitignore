@@ -1,0 +1,4 @@
+#To ignore some files that is temporarily created
+*~
+\*#*
+\#*#
