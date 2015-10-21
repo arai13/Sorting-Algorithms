@@ -1,9 +1,9 @@
-/****************************************
-File: Makefile
-Authors: Ashutosh Rai and Niraj Parajuli
+#****************************************
+#File: Makefile
+#Authors: Ashutosh Rai and Niraj Parajuli
 
-Description: Makefile for sorting-program
-****************************************/
+#Description: Makefile for sorting-program
+#****************************************
 
 EXPENDABLES = algorithms.o main-program.o
 EXECUTABLES = main-program
