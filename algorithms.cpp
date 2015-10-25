@@ -20,30 +20,35 @@ namespace sorting_program {
   }
 
   array::array(int array_size) {
-    float* array_ptr = new float[array_size];}
+    array_ptr = new float[array_size];
+    size = array_size;
+  }
 
   array::~array() {
     delete[] array_ptr;}
   
-  void array::generate(int array_size) {
+  void array::set_size(int array_size) {
+    size = array_size;}
+  
+  void array::generate() {
     float temp1, temp2; //random numbers to conduct
     srand(time(NULL));
     if (array_ptr == NULL) {
       cout << "Error: memory could not be allocated" << endl;
       return;}
     else{
-      for(int n = 0; n < array_size; n++){ //generating floats and writing to list.txt
+      for(int n = 0; n < size; n++){ //generating floats and writing to list.txt
 	temp1 = (rand() % 1000 + 1);
 	temp2 = (rand() % 10) + 1;
 	array_ptr[n] = temp1/temp2;}}}
 
-  void array::display(int array_size) {
+  void array::display_array() {
     cout << "[";
-    for (int i = 0; i < array_size; i++) {
-      if (i = (array_size-1)) 
+    for (int i = 0; i < size; i++) {
+      if (i == (size-1)) 
 	cout << array_ptr[i];
       else
 	cout << array_ptr[i] << ", ";}
     
-    cout << "]";}
+    cout << "]" << endl;}
 }

@@ -36,9 +36,9 @@ int main(){
     cout << "What is the size of the array you want to generate?" << endl; //asking for array_size
     cin >> array_size;}
 
-  array array1(array_size);
-  array1.generate(array_size);
-  array1.display(array_size);
+  array original(array_size);
+  original.generate();
+  original.display_array();
   
   return 0;
 }

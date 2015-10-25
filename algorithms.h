@@ -17,11 +17,13 @@ namespace sorting_program {
     ~array();
 
     //Modification Member Functions
-    void generate(int array_size);
-    void display(int array_size);
+    void set_size(int array_size);
+    void generate();
+    void display_array();
 
   private:
     float* array_ptr;
+    int size;
   };
 }
 
