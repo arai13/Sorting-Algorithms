@@ -19,12 +19,16 @@ namespace sorting_program {
     //Modification Member Functions
     void set_size(int array_size);
     void generate();
+    void insertion_sort();
+
+    //Constant Member Functions
     void display_array();
 
   private:
     float* array_ptr;
     int size;
   };
+
 }
 
 #endif
