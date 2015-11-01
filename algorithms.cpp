@@ -10,6 +10,7 @@ Description: algrorithms implementation file.
 #include <ctime>
 #include <cstdlib>
 #include <string>
+#include <limits>
 #include "algorithms.h"
 
 using namespace std;
@@ -26,7 +27,7 @@ namespace sorting_program {
 
   array::~array() {
     //delete[] array_ptr;
-}
+  }
   
   void array::set_size(int array_size) {
     size = array_size;}
@@ -62,10 +63,44 @@ namespace sorting_program {
       i = j - 1;
       while ((i > 0) && (array_ptr[i] > key)) {
 	array_ptr[i + 1] = array_ptr[i];
-	i--;
-      }
-      array_ptr[i+1] = key;
+	i--;}
+      array_ptr[i+1] = key;}
+    return;}
+
+  void array::merge_sort(int p, int r) {
+    if (p < r) {
+      int q = (p + r) / 2;
+      merge_sort(p, q);
+      merge_sort(q+1, r);
+      merge(p, q, r);
     }
     return;
   }
+  
+  void array::merge(int p, int q, int r) {
+    int n1 = q - p + 1;
+    int n2 = r - q;
+    float L[n1 + 2], R[n2 + 2];
+    
+    for (int i = 1; i <= n1; i++) 
+      L[i] = array_ptr[p + i - 1];
+    
+    for (int j = 1; j <= n2; j++)
+      R[j] = array_ptr[q + j];
+    
+    L[n1 + 1] = numeric_limits<float>::max();
+    R[n2 + 1] = numeric_limits<float>::max();
+    
+    int i = 1;
+    int j = 1;
+    
+    for (int k = p; k <= r; k++) {
+      if (L[i]<= R[j]) {
+	array_ptr[k] = L[i];
+	i++;}
+      else {
+	array_ptr[k] = R[j];
+	j++;}}
+    return;}
+
 }
