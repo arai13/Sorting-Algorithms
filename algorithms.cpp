@@ -103,4 +103,14 @@ namespace sorting_program {
 	j++;}}
     return;}
 
+  void array::bubble_sort() {
+  for (int i = (size - 1) ; i >= 0; i--){
+    for (int n = 0; n < i; n++) {
+      if (array_ptr[n] > array_ptr[n+1]) {
+  float swap = array_ptr[n];
+  array_ptr[n] = array_ptr[n+1];
+  array_ptr[n+1] = swap;}}}
+  return;
+  }
+
 }

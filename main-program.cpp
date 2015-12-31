@@ -19,9 +19,12 @@ int main(){
   char start_prompt; 
   int array_size; //size of the array
   
-  cout << "          *****************************" << endl;
-  cout << "          ***    Sorting Program    ***" << endl;
-  cout << "          *****************************" << endl;
+  cout << endl;
+  cout << "                    *****************************************************************************" << endl;
+  cout << "                    ***                                                                       ***" << endl;
+  cout << "                    ***                            Sorting Program                            ***" << endl;
+  cout << "                    ***                                                                       ***" << endl;
+  cout << "                    *****************************************************************************" << endl;
   
   cout << "Program Description: \n";
   cout << "This program uses various sorting algorithms to sort a randomly generated array and analyzes the time taken by each" << endl;
@@ -52,6 +55,7 @@ int main(){
   cout << endl << "What algorithms do you want to compare? Choose corresponding number." << endl;
   cout << "1) Insertion sort" << endl;
   cout << "2) Merge sort" << endl;
+  cout << "3) Bubble sort" << endl;
 
   cout << endl;
   
@@ -93,6 +97,17 @@ int main(){
       elapsed_time = ((float)t)/CLOCKS_PER_SEC;
      
       cout << "Merge Sort\t\t" << array_size << "\t\t" << elapsed_time << endl;
+      break;}
+
+    case 3: {
+      array bub_array = original;
+
+      t = clock();
+      bub_array.bubble_sort();
+      t = clock() - t;
+      elapsed_time = ((float)t)/CLOCKS_PER_SEC;
+     
+      cout << "Bubble Sort\t\t" << array_size << "\t\t" << elapsed_time << endl;
       break;}
       
     }
