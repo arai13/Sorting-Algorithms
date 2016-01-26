@@ -113,4 +113,28 @@ namespace sorting_program {
   return;
   }
 
+  int array::partition(int p, int r) {
+  int x = array_ptr[r];
+  int k = p-1;
+  float holder=0;
+  for(int j=p;j<r;j++) {
+      if(array_ptr[j]<=x){
+    k++;
+    holder=array_ptr[k];
+    array_ptr[k]=array_ptr[j];
+    array_ptr[j]=holder;}}
+  holder=array_ptr[r];
+  array_ptr[r]=array_ptr[k+1];
+  array_ptr[k+1]=holder;
+  return(k+1);
+  }
+
+  void array::quick_sort(int p, int r){
+  if (p < r){
+      int q;
+      q = partition(p,r);
+      quick_sort(p,q-1);
+      quick_sort(q+1, r);}}
+
+
 }

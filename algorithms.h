@@ -23,6 +23,8 @@ namespace sorting_program {
     void merge_sort(int p, int r);
     void merge(int p, int q, int r);
     void bubble_sort();
+    void quick_sort(int p, int r);
+    int partition(int p, int r);
 
     //Constant Member Functions
     void display_array();

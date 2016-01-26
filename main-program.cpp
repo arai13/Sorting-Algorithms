@@ -56,6 +56,7 @@ int main(){
   cout << "1) Insertion sort" << endl;
   cout << "2) Merge sort" << endl;
   cout << "3) Bubble sort" << endl;
+  cout << "4) Quick sort" << endl;
 
   cout << endl;
   
@@ -108,6 +109,19 @@ int main(){
       elapsed_time = ((float)t)/CLOCKS_PER_SEC;
      
       cout << "Bubble Sort\t\t" << array_size << "\t\t" << elapsed_time << endl;
+      break;}
+
+    case 4: {
+      array quick_array = original;
+      int start_quick = 1;
+      int end_quick = array_size;
+
+      t = clock();
+      quick_array.merge_sort(start_quick, end_quick);
+      t = clock() - t;
+      elapsed_time = ((float)t)/CLOCKS_PER_SEC;
+     
+      cout << "Quick Sort\t\t" << array_size << "\t\t" << elapsed_time << endl;
       break;}
       
     }
