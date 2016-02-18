@@ -5,7 +5,7 @@ The different algorithms we plan to use in this program are:
 - Insertion Sort (Done)
 - Merge Sort (Done)
 - Heap Sort
-- Quick Sort
+- Quick Sort (Done)
 - Counting Sort
 - Radix Sort
-- Bucket Sort
+- Bucket Sort (Done)
